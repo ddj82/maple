@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 선택 사항: body 다크모드 대응 */
+body {
+  @apply bg-white text-black;
+}
+body.dark {
+  @apply bg-gray-900 text-white;
+}
