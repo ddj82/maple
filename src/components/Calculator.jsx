@@ -78,9 +78,9 @@ const Calculator = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* 현재 세트 */}
                     <div>
-                        <div className="flex justify-between">
-                            <h3 className="text-xl font-bold mb-2">현재 세트</h3>
-                            <div className="text-sm font-blod">
+                        <div className="flex justify-between items-center mb-2">
+                            <h3 className="text-xl font-bold">현재 세트</h3>
+                            <div className="text-xs font-blod p-2 border rounded border-black dark:border-white">
                                 <button type="button" onClick={() => resetSetOption(true)}>초기화</button>
                             </div>
                         </div>
@@ -106,9 +106,9 @@ const Calculator = () => {
 
                     {/* 변경 세트 */}
                     <div>
-                        <div className="flex justify-between">
-                            <h3 className="text-xl font-bold mb-2">변경 세트</h3>
-                            <div className="text-sm font-blod">
+                        <div className="flex justify-between items-center mb-2">
+                            <h3 className="text-xl font-bold">변경 세트</h3>
+                            <div className="text-xs font-blod p-2 border rounded border-black dark:border-white">
                                 <button type="button" onClick={() => resetSetOption(false)}>초기화</button>
                             </div>
                         </div>
