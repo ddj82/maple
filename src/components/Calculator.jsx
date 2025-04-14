@@ -53,6 +53,20 @@ const Calculator = () => {
         </div>
     );
 
+    const resetSetOption = (type) => {
+        if (type) {
+            setCurrentArcane(0);
+            setCurrentArcaneStar(0);
+            setCurrentAbsolab(0);
+            setCurrentAbsolabStar(0);
+        } else {
+            setNextArcane(0);
+            setNextArcaneStar(0);
+            setNextAbsolab(0);
+            setNextAbsolabStar(0);
+        }
+    };
+
     return (
         <div>
             <div className="min-h-screen p-4 md:p-6 max-w-5xl mx-auto bg-white dark:bg-gray-900 space-y-8 text-gray-900 dark:text-gray-100">
@@ -64,7 +78,12 @@ const Calculator = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* 현재 세트 */}
                     <div>
-                        <h3 className="text-xl font-bold mb-2">현재 세트</h3>
+                        <div className="flex justify-between">
+                            <h3 className="text-xl font-bold mb-2">현재 세트</h3>
+                            <div className="text-sm font-blod">
+                                <button type="button" onClick={() => resetSetOption(true)}>초기화</button>
+                            </div>
+                        </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                             {renderSelect("아케인", currentArcane, setCurrentArcane, setOptions)}
                             {renderSelect("아케인 스타포스", currentArcaneStar, setCurrentArcaneStar, arcaneStarOptions)}
@@ -87,7 +106,12 @@ const Calculator = () => {
 
                     {/* 변경 세트 */}
                     <div>
-                        <h3 className="text-xl font-bold mb-2">변경 세트</h3>
+                        <div className="flex justify-between">
+                            <h3 className="text-xl font-bold mb-2">변경 세트</h3>
+                            <div className="text-sm font-blod">
+                                <button type="button" onClick={() => resetSetOption(false)}>초기화</button>
+                            </div>
+                        </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                             {renderSelect("아케인", nextArcane, setNextArcane, setOptions)}
                             {renderSelect("아케인 스타포스", nextArcaneStar, setNextArcaneStar, arcaneStarOptions)}
@@ -114,7 +138,7 @@ const Calculator = () => {
                     <div className="w-1/2">
                         <h3 className="text-xl font-bold text-center">변경 시 차이</h3>
                         <ul className="bg-yellow-50 dark:bg-yellow-900 p-4 rounded gap-2">
-                            {optionKeys.map((key, idx) => (
+                        {optionKeys.map((key, idx) => (
                                 <li key={key} className="flex justify-between text-sm">
                                     <span>{key}</span>
                                     <span className={
