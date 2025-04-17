@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Calculator from './components/Calculator'
 import {useDarkModeStore} from "./store/useDarkModeStore.js";
+import Test from "@/components/test.jsx";
 
 function App() {
     const isDarkMode = useDarkModeStore((state) => state.isDarkMode)
@@ -10,9 +12,14 @@ function App() {
     }, [isDarkMode])
 
     return (
-        <div className="min-h-screen">
-            <Calculator />
-        </div>
+        <Router>
+            <div className="min-h-screen">
+                <Routes>
+                    <Route path="/" element={<Calculator />} />
+                    <Route path="/test" element={<Test />} />
+                </Routes>
+            </div>
+        </Router>
     )
 }
 
