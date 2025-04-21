@@ -12,7 +12,7 @@ function App() {
     }, [isDarkMode])
 
     return (
-        <Router>
+        <Router basename="/maple">
             <div className="min-h-screen">
                 <Routes>
                     <Route path="/" element={<Calculator />} />
