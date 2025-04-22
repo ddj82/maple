@@ -1,12 +1,34 @@
-# React + Vite
+# Maple Set Option Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+메이플스토리m 게임의 아케인셰이드, 앱솔랩스, 파프니르 세트의 옵션과 스타포스 효과를 비교하고 계산할 수 있는 웹 애플리케이션입니다.
 
-Currently, two official plugins are available:
+🌐 [실시간 배포 사이트 보러가기](https://ddj82.github.io/maple/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📦 기술 스택
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React, TypeScript, TailwindCSS
+- **Deployment**: GitHub Actions + GitHub Pages
+- **기능**
+    - 세트 장비 옵션 및 스타포스 강화 수치 비교
+    - 실시간 결과 반영 및 시각적 차이 강조
+    - 다크 모드 지원
+
+---
+
+## 🔗 소스 코드
+
+- GitHub Repository: [github.com/ddj82/maple](https://github.com/ddj82/maple)
+
+---
+
+## 📜 라이선스
+
+본 프로젝트는 [MIT License](./LICENSE)에 따라 오픈소스로 제공되며, 사용 시 반드시 출처를 명시해 주세요.
+
+---
+
+## 🙋‍♂️ 제작자
+
+- GitHub: [@ddj82](https://github.com/ddj82)
