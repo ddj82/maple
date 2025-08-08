@@ -8,7 +8,7 @@
 
 ## 📦 기술 스택
 
-- **Frontend**: React, TypeScript, TailwindCSS
+- **Frontend**: React, JS, TailwindCSS
 - **Deployment**: GitHub Actions + GitHub Pages
 - **기능**
     - 세트 장비 옵션 및 스타포스 강화 수치 비교

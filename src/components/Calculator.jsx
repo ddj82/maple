@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
     optionKeys,
     arcaneOptions,
@@ -31,6 +31,33 @@ const Calculator = () => {
     const [nextArcaneStar, setNextArcaneStar] = useState(0);
     const [nextAbsolabStar, setNextAbsolabStar] = useState(0);
     const [nextFafnirStar, setNextFafnirStar] = useState(0);
+
+    useEffect(() => {
+        if (!showCurrentArcane) {
+            setCurrentArcane(0);
+            setCurrentArcaneStar(0);
+        }
+        if (!showCurrentAbsolab) {
+            setCurrentAbsolab(0);
+            setCurrentAbsolabStar(0);
+        }
+        if (!showCurrentFafnir) {
+            setCurrentFafnir(0);
+            setCurrentFafnirStar(0);
+        }
+        if (!showNextArcane) {
+            setNextArcane(0);
+            setNextArcaneStar(0);
+        }
+        if (!showNextAbsolab) {
+            setNextAbsolab(0);
+            setNextAbsolabStar(0);
+        }
+        if (!showNextFafnir) {
+            setNextFafnir(0);
+            setNextFafnirStar(0);
+        }
+    }, [showCurrentArcane, showCurrentAbsolab, showCurrentFafnir, showNextArcane, showNextAbsolab, showNextFafnir]);
 
 
     const calculateTotal = (arcaneSet, absolabSet, fafnirSet, arcaneStar, absolabStar, fafnirStar) => {
@@ -83,6 +110,7 @@ const Calculator = () => {
         .map(Number)
         .sort((a, b) => a - b);
 
+
     const resetSetOption = (type) => {
         if (type) {
             setCurrentArcane(0);
@@ -91,6 +119,9 @@ const Calculator = () => {
             setCurrentAbsolabStar(0);
             setCurrentFafnir(0);
             setCurrentFafnirStar(0);
+            // setShowCurrentArcane(false);
+            // setShowCurrentAbsolab(false);
+            // setShowCurrentFafnir(false);
         } else {
             setNextArcane(0);
             setNextArcaneStar(0);
@@ -98,6 +129,9 @@ const Calculator = () => {
             setNextAbsolabStar(0);
             setNextFafnir(0);
             setNextFafnirStar(0);
+            // setShowNextArcane(false);
+            // setShowNextAbsolab(false);
+            // setShowNextFafnir(false);
         }
     };
 
@@ -202,7 +236,6 @@ const Calculator = () => {
                         <th className="text-center py-1.5">현재</th>
                         <th className="text-center py-1.5">변경</th>
                         <th className="py-1.5"></th>
-                        {/*<th className="py-1.5 border border-b-0 border-rose-300 text-center text-rose-500">*/}
                         <th className="py-1.5 text-center text-rose-500">
                             차이
                         </th>
@@ -223,10 +256,6 @@ const Calculator = () => {
                                     : `${nextTotal[idx]}%`}
                             </td>
                             <td className="py-1.5"></td>
-                            {/*
-                            className={`text-center py-1.5 border border-t-0 border-rose-300
-                            ${idx === (optionKeys.length - 1) ? "" : "border-t-0 border-b-0"}
-                            */}
                             <td
                                 className={`text-center py-1.5
                                 ${
